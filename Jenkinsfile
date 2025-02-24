@@ -27,6 +27,13 @@ pipeline {
         
         stage('Unit Test') {
             steps {
+                // We use the script block to execute a groovy code within a step
+                script {
+                    for (int i = 0; i < 60; i++) {
+                        echo "${i + 1}"
+                        sleep 1
+                    }
+                }
                 sh 'mvn test'
             }
             
