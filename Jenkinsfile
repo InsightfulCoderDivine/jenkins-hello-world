@@ -16,9 +16,9 @@ pipeline {
         
         stage('Build') {
             steps {
-                // Get some code from a GitHub repository
+                // Get some code from a GitHub repository if pasting the script directly in the pipeline
                 // git 'https://github.com/InsightfulCoderDivine/jenkins-hello-world.git' // if master branch
-                git branch: 'main', url: 'https://github.com/InsightfulCoderDivine/jenkins-hello-world.git' // if main branch
+                // git branch: 'main', url: 'https://github.com/InsightfulCoderDivine/jenkins-hello-world.git' // if main branch
 
                 // Run Maven Package CMD
                 sh "mvn clean package -DskipTests=true"
